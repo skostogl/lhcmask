@@ -271,8 +271,6 @@ if enable_bb_python:
     # Here the datafremes can be edited, e.g. to set bbb intensity
     
     
-    bb_dfs['b1']['other_charge_elpb'] =bb_dfs['b1']['other_charge_ppb']*configuration['beam_charge'] # multiply with beam charge
-    bb_dfs['b2']['other_charge_elpb'] =bb_dfs['b2']['other_charge_ppb']*configuration['beam_charge']
 
 
 
@@ -425,7 +423,7 @@ else:
 
 # Enable bb for matchings
 if match_q_dq_with_bb:
-    mad_track.globals['on_bb_charge'] = 1*configuration['beam_charge']
+    mad_track.globals['on_bb_charge'] = 1
 else:
     mad_track.globals['on_bb_charge'] = 0
 
@@ -483,7 +481,7 @@ if enable_imperfections:
     mad_track.input("call, file='errors/HL-LHC/corr_value_limit.madx';")
 
 # Switch on bb lenses
-mad_track.globals.on_bb_charge = 1.*configuration['beam_charge']
+mad_track.globals.on_bb_charge = 1.
 
 # Switch on RF cavities
 mad_track.globals['vrf400'] = configuration['vrf_total']
