@@ -124,9 +124,10 @@ configuration = {
         'on_x2'                   : -170,         # [urad] 
         'on_sep2'                 : 1.,        # [mm]   
         'on_x5'                   : 250,          # [urad] 
-        'on_sep5'                 : 0,            # [mm]   
+        'on_sep5'                 : 0,            # [mm]  
         'on_x8'                   : 170,         # [urad], in V see input.py 
         'on_sep8'                 : -1,       # [mm]   
+        'phi_ir8'                 : 90.,       # [deg]
         'on_a1'                   : 0,            # [urad] 
         'on_o1'                   : 0,            # [mm]   
         'on_a2'                   : 0,            # [urad] 

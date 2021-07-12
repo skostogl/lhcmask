@@ -85,8 +85,6 @@ mad.input('exec, twiss_opt;')
 # Apply optics
 ost.apply_optics(mad, optics_file=optics_file)
 
-mad.input('phi_ir8=90;')
-
 # Attach beam to sequences
 mad.globals.nrj = configuration['beam_energy_tot']
 particle_type = 'proton'
@@ -516,6 +514,12 @@ else:
         skip_mad_use=True)
 
 
+mad_track.globals.on_bb_charge = 0
+mad_track.twiss()
+tdf = mad_track.get_twiss_df('twiss')
+sdf = mad_track.get_summ_df('summ')
+tdf.to_parquet('final_twiss_BBOFF.parquet')
+sdf.to_parquet('final_summ_BBOFF.parquet')
 #######################################
 # Save optics and orbit at start ring #
 #######################################
